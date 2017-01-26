@@ -13,4 +13,4 @@ applications:
 - name: car-dashboard
   command: npm start
   path: .
-  memory: 512M
+  memory: 512M 
