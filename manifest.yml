@@ -1,16 +1,24 @@
 ---
 declared-services:
-  conversation-service:
+  ADDVisor:
     label: conversation
-    plan: free
-  speech-to-text-service:
+    plan: standard
+  Speech to Text-yi:
     label: speech_to_text
-    plan: standard
-  text-to-speech-service:
+    plan: lite
+  Text to Speech-4f:
     label: text_to_speech
-    plan: standard
+    plan: standard  
 applications:
-- name: car-dashboard
+- name: AbogadoLaboral
   command: npm start
   path: .
-  memory: 512M 
+  instances: 1
+  memory: 512MB
+  services:
+  - ADDVisor
+  - Speech to Text-yi
+  - Text to Speech-4f
+  env:
+    NPM_CONFIG_PRODUCTION: false
+    WORKSPACE_ID: 54dcc4ce-fed8-49f0-b5fc-222172c8cf1c
